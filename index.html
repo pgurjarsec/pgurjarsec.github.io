@@ -1,140 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pradeep Gurjar - Cyber Security Student Resume</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1a73e8;
-      --text: #333;
-      --background: #fff;
-      --card-bg: #f9f9f9;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: var(--background);
-      color: var(--text);
-    }
-
-    header {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    section h2 {
-      margin-top: 0;
-      font-family: 'Montserrat', sans-serif;
-      color: var(--primary);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .contact div {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: var(--primary);
-      color: white;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Pradeep Gurjar - Cyber Security Student Resume</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --secondary: #1565c0;
+            --text: #212121;
+            --bg: #ffffff;
+            --card-bg: #f5f5f5;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        main {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+        section {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        .skills span {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            margin: 0.3rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Pradeep Gurjar</h1>
-    <p>Cyber Security Student | Ethical Hacking Enthusiast</p>
-  </header>
-
-  <div class="container">
-    <section>
-      <h2>About Me</h2>
-      <p>I am a Cyber Security Engineering student specializing in Ethical Hacking, Network Security, and Data Protection. Passionate about cybersecurity research, hands-on projects, and innovative defense strategies against cyber threats.</p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li>B.Tech in Computer Science Engineering (Specialization: Cybersecurity), 2023 - Present</li>
-        <li>Completed coursework in DBMS, Networking, Discrete Mathematics, and Security Tools</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Network Security & Ethical Hacking</li>
-        <li>Snort IDS, Firewalls, Honeypots</li>
-        <li>Python, SQL, Bash Scripting</li>
-        <li>Linux (Kali, Ubuntu) and Windows Security</li>
-        <li>Azure Cloud Networking & Security</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>Intrusion Detection System using Snort with Real-Time Alerts & Auto Blocking</li>
-        <li>SSH Honeypot for Hacker Detection with Telegram Alerts</li>
-        <li>Azure 3-Tier Architecture Deployment with NSGs & Load Balancer</li>
-        <li>Convert Unstructured Data into Structured Data using Azure Data Factory</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <div class="contact">
-        <div><strong>Email:</strong> pradeep@example.com</div>
-        <div><strong>Phone:</strong> +91 9876543210</div>
-        <div><strong>Location:</strong> Rajasthan, India</div>
-        <div><strong>GitHub:</strong> <a href="https://github.com/pgurjarsec" target="_blank">github.com/pgurjarsec</a></div>
-      </div>
-    </section>
-  </div>
-
-  <footer>
-    <p>© 2025 Pradeep Gurjar | Cyber Security Student</p>
-  </footer>
+    <header>
+        <h1>Pradeep Gurjar</h1>
+        <p>Cyber Security Student | Aspiring Ethical Hacker</p>
+        <p>Email: pradeep@example.com | Phone: +91-9876543210</p>
+    </header>
+    <main>
+        <section>
+            <h2>Profile</h2>
+            <p>Motivated Cyber Security student with a passion for ethical hacking, penetration testing, and data protection. Actively exploring vulnerabilities and defensive strategies to secure systems.</p>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <p><b>B.Tech in Computer Science (Cyber Security)</b><br>
+            XYZ University, 2023 – Present</p>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>Ethical Hacking</span>
+                <span>Network Security</span>
+                <span>Linux</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Snort IDS</span>
+                <span>Azure Cloud</span>
+            </div>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li><b>Snort IDS Project:</b> Built intrusion detection system with real-time alerts and Telegram integration.</li>
+                <li><b>Azure Data Factory:</b> Converted unstructured CSV into structured SQL database using pipelines.</li>
+                <li><b>SSH Honeypot:</b> Setup honeypot with IP blocking and dashboard for attack detection.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                <li>TryHackMe Rooms Completed (Easy Peasy, VulnUniversity)</li>
+                <li>LinuxWorld Summer Internship 2025</li>
+                <li>Azure Fundamentals (Self-learning)</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Pradeep Gurjar | Cyber Security Student</p>
+    </footer>
 </body>
 </html>
