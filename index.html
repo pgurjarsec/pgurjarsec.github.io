@@ -1,399 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Pradeep Gurjar - Cyber Security Student</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Pradeep Gurjar - Cyber Security Student Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --text: #333;
+      --background: #fff;
+      --card-bg: #f9f9f9;
+    }
 
-    <style>
-        /* Variables */
-        :root {
-            --primary-color: #004d40;
-            --secondary-color: #00796b;
-            --background-light: #f5f5f5;
-            --background-dark: #e0e0e0;
-            --text-color: #212121;
-            --subtle-text: #616161;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
 
-        /* Dark Mode */
-        body.dark {
-            background: #121212;
-            color: #f5f5f5;
-        }
-        body.dark .card {
-            background: #1e1e1e;
-        }
-        body.dark nav {
-            background: #1e1e1e;
-        }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
 
-        /* Global Styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    header h1 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--background-light);
-            color: var(--text-color);
-            line-height: 1.7;
-        }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
 
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
-            z-index: 1000;
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 20px;
-        }
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        nav ul a:hover { color: var(--secondary-color); }
+    section {
+      margin-bottom: 2rem;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        #darkModeToggle {
-            margin-left: 20px;
-            padding: 6px 12px;
-            border: none;
-            border-radius: 6px;
-            background: var(--secondary-color);
-            color: #fff;
-            cursor: pointer;
-        }
+    section h2 {
+      margin-top: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+    }
 
-        /* Header */
-        header {
-            min-height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            padding: 4rem 2rem;
-        }
-        header h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; }
-        .social-links { margin-top: 2rem; }
-        .social-links a {
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 0 15px;
-            transition: transform 0.3s ease;
-        }
-        .social-links a:hover { transform: scale(1.1); }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-        /* Sections */
-        section {
-            padding: 5rem 0;
-            border-bottom: 1px solid var(--background-dark);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
-        }
-        section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-        }
-        .icon { margin-right: 15px; color: var(--secondary-color); }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-        .details {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 30px;
-            color: var(--subtle-text);
-        }
+    .contact div {
+      flex: 1;
+      min-width: 200px;
+    }
 
-        /* Card */
-        .card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        .card:hover { transform: translateY(-5px); }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .tags span {
-            background: var(--background-dark);
-            color: var(--text-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Resume Button */
-        .resume-btn {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: #fff;
-            padding: 10px 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .resume-btn:hover { background: var(--primary-color); }
-
-        /* Internship */
-        #internship ul { list-style: none; padding-left: 20px; }
-        #internship li { margin-bottom: 10px; position: relative; padding-left: 25px; }
-        #internship li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--secondary-color);
-            position: absolute;
-            left: 0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--primary-color);
-            color: #fff;
-        }
-        footer .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 10px;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--primary);
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Pradeep Gurjar</h1>
+    <p>Cyber Security Student | Ethical Hacking Enthusiast</p>
+  </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">Pradeep Gurjar</a>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#internship">Internship</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="darkModeToggle">🌙</button>
-        </div>
-    </nav>
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>I am a Cyber Security Engineering student specializing in Ethical Hacking, Network Security, and Data Protection. Passionate about cybersecurity research, hands-on projects, and innovative defense strategies against cyber threats.</p>
+    </section>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Pradeep Gurjar</h1>
-            <p>Cyber Security Student | Sikar, Rajasthan</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:pgujarsec@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:7877688211"><i class="fas fa-phone"></i></a>
-            </div>
-            <a href="Pradeep_Gurjar_Resume.pdf" class="resume-btn" download>📄 Download Resume</a>
-        </div>
-    </header>
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>B.Tech in Computer Science Engineering (Specialization: Cybersecurity), 2023 - Present</li>
+        <li>Completed coursework in DBMS, Networking, Discrete Mathematics, and Security Tools</li>
+      </ul>
+    </section>
 
-    <main>
-        <!-- About -->
-        <section id="about">
-            <div class="container">
-                <h2><i class="fas fa-user-circle icon"></i> About Me</h2>
-                <p>
-                    I'm a motivated second-year Computer Science Engineering (Cyber Security) student with a strong passion for solving complex problems. I'm currently seeking an entry-level role to leverage my technical skills and contribute to impactful, innovative projects. I thrive in dynamic team environments and am always eager to learn and grow.
-                </p>
-                <div class="details">
-                    <span><strong>Location:</strong> Sikar, Rajasthan</span>
-                    <span><strong>Current CGPA:</strong> 7.40</span>
-                </div>
-            </div>
-        </section>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Network Security & Ethical Hacking</li>
+        <li>Snort IDS, Firewalls, Honeypots</li>
+        <li>Python, SQL, Bash Scripting</li>
+        <li>Linux (Kali, Ubuntu) and Windows Security</li>
+        <li>Azure Cloud Networking & Security</li>
+      </ul>
+    </section>
 
-        <!-- Education -->
-        <section id="education">
-            <div class="container">
-                <h2><i class="fas fa-graduation-cap icon"></i> Education</h2>
-                <div class="card">
-                    <h3>B.Tech in Computer Science Engineering (Cyber Security)</h3>
-                    <p>Sobhasaria Group of Institutions, Sikar — BTU (2023-2027)</p>
-                    <p><strong>CGPA:</strong> 7.40</p>
-                </div>
-                <div class="card">
-                    <h3>Higher Secondary Education (2023)</h3>
-                    <p>Gyandev Public School, Sikar (RBSE) | PCM</p>
-                    <p><strong>Percentage:</strong> 85.20%</p>
-                </div>
-                <div class="card">
-                    <h3>Secondary Education (2021)</h3>
-                    <p>Govt. School, Sikar (RBSE)</p>
-                    <p><strong>Percentage:</strong> 86.20%</p>
-                </div>
-            </div>
-        </section>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>Intrusion Detection System using Snort with Real-Time Alerts & Auto Blocking</li>
+        <li>SSH Honeypot for Hacker Detection with Telegram Alerts</li>
+        <li>Azure 3-Tier Architecture Deployment with NSGs & Load Balancer</li>
+        <li>Convert Unstructured Data into Structured Data using Azure Data Factory</li>
+      </ul>
+    </section>
 
-        <!-- Skills -->
-        <section id="skills">
-            <div class="container">
-                <h2><i class="fas fa-cogs icon"></i> Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Technical Skills</h3>
-                        <div class="tags">
-                            <span>OOPs</span>
-                            <span>Data Structures & Algorithms (DSA)</span>
-                            <span>Basic Cyber Security</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Soft Skills</h3>
-                        <div class="tags">
-                            <span>Collaboration</span>
-                            <span>Problem Solving</span>
-                            <span>Critical Thinking</span>
-                            <span>Time Management</span>
-                            <span>Quick Learning</span>
-                            <span>Management</span>
-                            <span>Leadership</span>
-                            <span>Public Speaking</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <div class="tags">
-                            <span>Hindi</span>
-                            <span>English</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <div><strong>Email:</strong> pradeep@example.com</div>
+        <div><strong>Phone:</strong> +91 9876543210</div>
+        <div><strong>Location:</strong> Rajasthan, India</div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/pgurjarsec" target="_blank">github.com/pgurjarsec</a></div>
+      </div>
+    </section>
+  </div>
 
-        <!-- Projects -->
-        <section id="projects">
-            <div class="container">
-                <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
-                <div class="card">
-                    <h3>Snort IDS with Real-Time Alerts</h3>
-                    <p>Implemented an Intrusion Detection System using Snort on Kali Linux with custom rules, auto-blocking, SQLite logging, and Telegram integration.</p>
-                    <a href="https://github.com/pgurjarsec/snort-project" target="_blank">View Project</a>
-                </div>
-                <div class="card">
-                    <h3>Azure Data Factory – Data Transformation</h3>
-                    <p>Developed a pipeline to convert CSV files from Azure Blob Storage into structured data in Azure SQL Database.</p>
-                    <a href="https://github.com/pgurjarsec/adf-project" target="_blank">View Project</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Internship -->
-        <section id="internship">
-            <div class="container">
-                <h2><i class="fas fa-briefcase icon"></i> Internship</h2>
-                <div class="card">
-                    <h3>Cyber Security Intern</h3>
-                    <p>Eximius Tech Innovations Pvt. Ltd. | 06/2024 - 07/2024</p>
-                    <ul>
-                        <li>Successfully completed a one-month internship, gaining hands-on experience in cybersecurity.</li>
-                        <li>Collaborated with the team to identify potential risks and develop effective mitigation strategies.</li>
-                        <li>Gained practical knowledge of various security protocols and threat analysis techniques.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <div class="container">
-                <h2><i class="fas fa-envelope-open-text icon"></i> Contact</h2>
-                <div class="card">
-                    <p>Feel free to reach out to me for professional inquiries or collaborations.</p>
-                    <ul>
-                        <li><strong>Phone:</strong> 7877688211</li>
-                        <li><strong>Email:</strong> <a href="mailto:pgujarsec@gmail.com">pgujarsec@gmail.com</a></li>
-                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank">linkedin.com/in/pgurjarsec</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Pradeep Gurjar | Cyber Security Enthusiast</p>
-            <div class="social-links">
-                <a href="https://github.com/pgurjarsec" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/pgurjarsec" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:pgujarsec@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Dark Mode Toggle
-        const toggle = document.getElementById("darkModeToggle");
-        toggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
-        });
-
-        // Scroll Animation
-        const sections = document.querySelectorAll("section");
-        window.addEventListener("scroll", () => {
-            sections.forEach(sec => {
-                if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-                    sec.classList.add("show");
-                }
-            });
-        });
-    </script>
+  <footer>
+    <p>© 2025 Pradeep Gurjar | Cyber Security Student</p>
+  </footer>
 </body>
 </html>
