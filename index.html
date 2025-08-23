@@ -2,31 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pradeep Gurjar – Cyber Security Student</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,500&display=swap" rel="stylesheet">
+  <title>Pradeep Gurjar - Cyber Security Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: #fafbff; color: #1a1a1a; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
-    header { text-align: center; }
-    header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.4rem; margin: 0; }
-    header p { font-size: 1.1rem; color: #555; margin: 8px 0; }
-    nav { margin: 24px 0; }
-    nav ul { list-style: none; padding: 0; display: flex; gap: 16px; }
-    nav ul li a { text-decoration: none; color: #1a237e; font-weight: 500; }
-    nav ul li a:hover { text-decoration: underline; }
-    .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
-    main { max-width: 600px; text-align: left; width: 100%; }
-    section { margin-bottom: 32px; }
-    section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; margin-bottom: 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
-    footer { margin: 40px 0 0; font-size: 0.9rem; color: #777; }
+    :root {
+      --primary: #1a237e;
+      --accent: #3949ab;
+      --bg: #f9faff;
+      --text: #222;
+      --muted: #666;
+      --card-bg: #fff;
+      --shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      position: relative;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: 0.3s;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    header {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #e0e3ff;
+    }
+
+    /* Sections */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    section h2 {
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    /* Lists */
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
+    /* Skills tags */
+    .skills, .languages, .soft-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skills span, .languages span, .soft-skills span {
+      background: #eef2ff;
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+    .contact-list li { margin-bottom: 8px; }
+    .contact-list a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      background: var(--primary);
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      nav ul { flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <!-- Optional: add your photo here -->
-    <!-- <img src="your-photo.jpg" alt="Pradeep Gurjar" class="profile-img"> -->
-    <h1>Pradeep Gurjar</h1>
-    <p>Cyber Security Student — Sikar, Rajasthan</p>
-  </header>
+
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
@@ -36,15 +152,80 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <header>
+    <h1>Pradeep Gurjar</h1>
+    <p>Cyber Security Student — Sikar, Rajasthan</p>
+  </header>
+
   <main>
     <section id="about">
-      <h2>About</h2>
-      <p>Motivated second-year Computer Science Engineering (Cyber Security) student... [keep your text here]</p>
+      <h2>About Me</h2>
+      <p>
+        Motivated second-year Computer Science Engineering (Cyber Security) student with a strong foundation in cybersecurity principles and problem-solving. 
+        Seeking an entry-level opportunity to apply technical skills and contribute to innovative projects. 
+        Eager to learn, collaborate, and deliver impactful solutions in a dynamic team environment.
+      </p>
+      <p><strong>Location:</strong> Sikar, Rajasthan | <strong>CGPA:</strong> 7.40</p>
     </section>
-    <!-- Continue with other sections: Education, Skills, Internship, Contact -->
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.Tech in Computer Science Engineering (Cyber Security)</strong><br>
+            Sobhasaria Group of Institutions, Sikar — BTU (2023-2027) | CGPA: 7.40</li>
+        <li><strong>Higher Secondary Education (2023)</strong><br>
+            Gyandev Public School, Sikar (RBSE) | PCM | 85.20%</li>
+        <li><strong>Secondary Education (2021)</strong><br>
+            Govt. School, Sikar (RBSE) | 86.20%</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <span>OOPs</span>
+        <span>DSA</span>
+        <span>Basic Cyber Security</span>
+      </div>
+
+      <h2>Languages</h2>
+      <div class="languages">
+        <span>Hindi</span>
+        <span>English</span>
+      </div>
+
+      <h2>Soft Skills</h2>
+      <div class="soft-skills">
+        <span>Management</span><span>Public Speaking</span><span>Leadership</span>
+        <span>Critical Thinking</span><span>Time Management</span>
+        <span>Collaboration</span><span>Problem Solving</span><span>Quick Learning</span>
+      </div>
+    </section>
+
+    <section id="internship">
+      <h2>Internship</h2>
+      <p><strong>Eximius Tech Innovations Pvt. Ltd.</strong><br>
+        Cyber Security | 06/2024 - 07/2024<br>
+        Successfully completed a one-month internship focused on Cyber Security. 
+        Collaborated with the team to identify potential risks and implement solutions. 
+        Gained practical experience in protocols and threat analysis.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><strong>Phone:</strong> 7877688211</li>
+        <li><strong>Email:</strong> <a href="mailto:pgujarsec@gmail.com">pgujarsec@gmail.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank">pgurjarsec</a></li>
+      </ul>
+    </section>
   </main>
+
   <footer>
     &copy; 2024 Pradeep Gurjar
   </footer>
+
 </body>
 </html>
