@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
         /* Variables */
         :root {
@@ -19,19 +20,26 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Dark Mode */
+        body.dark {
+            background: #121212;
+            color: #f5f5f5;
         }
+        body.dark .card {
+            background: #1e1e1e;
+        }
+        body.dark nav {
+            background: #1e1e1e;
+        }
+
+        /* Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Roboto', sans-serif;
             background: var(--background-light);
             color: var(--text-color);
             line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -48,40 +56,36 @@
             box-shadow: var(--shadow);
             z-index: 1000;
         }
-
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 20px;
         }
-
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--primary-color);
             text-decoration: none;
-            letter-spacing: 1px;
         }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
         nav ul a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s ease;
         }
+        nav ul a:hover { color: var(--secondary-color); }
 
-        nav ul a:hover {
-            color: var(--secondary-color);
+        #darkModeToggle {
+            margin-left: 20px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            background: var(--secondary-color);
+            color: #fff;
+            cursor: pointer;
         }
 
         /* Header */
@@ -95,44 +99,29 @@
             color: #fff;
             padding: 4rem 2rem;
         }
-
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .social-links {
-            margin-top: 2rem;
-        }
-
+        header h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+        .social-links { margin-top: 2rem; }
         .social-links a {
             color: #fff;
             font-size: 1.8rem;
             margin: 0 15px;
             transition: transform 0.3s ease;
         }
+        .social-links a:hover { transform: scale(1.1); }
 
-        .social-links a:hover {
-            transform: scale(1.1);
-        }
-
-        /* Main Sections */
+        /* Sections */
         section {
             padding: 5rem 0;
             border-bottom: 1px solid var(--background-dark);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
         }
-
-        section:last-child {
-            border-bottom: none;
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
-
         h2 {
             font-size: 2rem;
             font-weight: 700;
@@ -141,14 +130,8 @@
             display: flex;
             align-items: center;
         }
+        .icon { margin-right: 15px; color: var(--secondary-color); }
 
-        .icon {
-            margin-right: 15px;
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-        }
-
-        /* About Section */
         .details {
             margin-top: 1.5rem;
             display: flex;
@@ -156,7 +139,7 @@
             color: var(--subtle-text);
         }
 
-        /* Card Component */
+        /* Card */
         .card {
             background: var(--card-bg);
             padding: 2rem;
@@ -165,40 +148,19 @@
             margin-bottom: 1.5rem;
             transition: transform 0.3s ease;
         }
+        .card:hover { transform: translateY(-5px); }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--primary-color);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: var(--subtle-text);
-        }
-
-        /* Skills Section */
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-
-        .skill-category h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-
         .tags span {
             background: var(--background-dark);
             color: var(--text-color);
@@ -208,26 +170,30 @@
             font-weight: 500;
         }
 
-        /* Internship Section */
-        #internship ul {
-            padding-left: 20px;
-            list-style: none;
+        /* Resume Button */
+        .resume-btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
         }
+        .resume-btn:hover { background: var(--primary-color); }
 
-        #internship li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-
+        /* Internship */
+        #internship ul { list-style: none; padding-left: 20px; }
+        #internship li { margin-bottom: 10px; position: relative; padding-left: 25px; }
         #internship li::before {
-            content: "\f058"; /* Checkmark icon */
+            content: "\f058";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             color: var(--secondary-color);
             position: absolute;
             left: 0;
-            top: 0;
         }
 
         /* Footer */
@@ -237,46 +203,16 @@
             background: var(--primary-color);
             color: #fff;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav ul li {
-                margin: 0 10px 10px;
-            }
-
-            header {
-                min-height: 60vh;
-                padding: 2rem;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .details {
-                flex-direction: column;
-                gap: 10px;
-            }
+        footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <a href="#" class="logo">Pradeep Gurjar</a>
@@ -284,12 +220,15 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#internship">Internship</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="darkModeToggle">🌙</button>
         </div>
     </nav>
 
+    <!-- Header -->
     <header>
         <div class="container">
             <h1>Pradeep Gurjar</h1>
@@ -299,10 +238,12 @@
                 <a href="mailto:pgujarsec@gmail.com"><i class="fas fa-envelope"></i></a>
                 <a href="tel:7877688211"><i class="fas fa-phone"></i></a>
             </div>
+            <a href="Pradeep_Gurjar_Resume.pdf" class="resume-btn" download>📄 Download Resume</a>
         </div>
     </header>
 
     <main>
+        <!-- About -->
         <section id="about">
             <div class="container">
                 <h2><i class="fas fa-user-circle icon"></i> About Me</h2>
@@ -316,6 +257,7 @@
             </div>
         </section>
 
+        <!-- Education -->
         <section id="education">
             <div class="container">
                 <h2><i class="fas fa-graduation-cap icon"></i> Education</h2>
@@ -337,6 +279,7 @@
             </div>
         </section>
 
+        <!-- Skills -->
         <section id="skills">
             <div class="container">
                 <h2><i class="fas fa-cogs icon"></i> Skills</h2>
@@ -373,6 +316,24 @@
             </div>
         </section>
 
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
+                <div class="card">
+                    <h3>Snort IDS with Real-Time Alerts</h3>
+                    <p>Implemented an Intrusion Detection System using Snort on Kali Linux with custom rules, auto-blocking, SQLite logging, and Telegram integration.</p>
+                    <a href="https://github.com/pgurjarsec/snort-project" target="_blank">View Project</a>
+                </div>
+                <div class="card">
+                    <h3>Azure Data Factory – Data Transformation</h3>
+                    <p>Developed a pipeline to convert CSV files from Azure Blob Storage into structured data in Azure SQL Database.</p>
+                    <a href="https://github.com/pgurjarsec/adf-project" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internship -->
         <section id="internship">
             <div class="container">
                 <h2><i class="fas fa-briefcase icon"></i> Internship</h2>
@@ -388,12 +349,13 @@
             </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact">
             <div class="container">
                 <h2><i class="fas fa-envelope-open-text icon"></i> Contact</h2>
                 <div class="card">
                     <p>Feel free to reach out to me for professional inquiries or collaborations.</p>
-                    <ul class="contact-list">
+                    <ul>
                         <li><strong>Phone:</strong> 7877688211</li>
                         <li><strong>Email:</strong> <a href="mailto:pgujarsec@gmail.com">pgujarsec@gmail.com</a></li>
                         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank">linkedin.com/in/pgurjarsec</a></li>
@@ -403,11 +365,35 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Pradeep Gurjar. All Rights Reserved.</p>
+            <p>© 2025 Pradeep Gurjar | Cyber Security Enthusiast</p>
+            <div class="social-links">
+                <a href="https://github.com/pgurjarsec" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/pgurjarsec" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:pgujarsec@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script>
+        // Dark Mode Toggle
+        const toggle = document.getElementById("darkModeToggle");
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+        });
+
+        // Scroll Animation
+        const sections = document.querySelectorAll("section");
+        window.addEventListener("scroll", () => {
+            sections.forEach(sec => {
+                if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+                    sec.classList.add("show");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
