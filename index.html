@@ -1,231 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pradeep Gurjar - Cyber Security Student</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1a237e;
-      --accent: #3949ab;
-      --bg: #f9faff;
-      --text: #222;
-      --muted: #666;
-      --card-bg: #fff;
-      --shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
+    <meta charset="UTF-8">
+    <title>Pradeep Gurjar - Cyber Security Student</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Variables */
+        :root {
+            --primary-color: #004d40;
+            --secondary-color: #00796b;
+            --background-light: #f5f5f5;
+            --background-dark: #e0e0e0;
+            --text-color: #212121;
+            --subtle-text: #616161;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
 
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Navbar */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      box-shadow: var(--shadow);
-      z-index: 100;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 1rem;
-    }
-    nav ul li {
-      margin: 0 20px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      position: relative;
-    }
-    nav ul li a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: -4px;
-      width: 0; height: 2px;
-      background: var(--accent);
-      transition: 0.3s;
-    }
-    nav ul li a:hover::after {
-      width: 100%;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--background-light);
+            color: var(--text-color);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* Hero */
-    header {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
-      padding: 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #e0e3ff;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Sections */
-    section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-    section h2 {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 10px;
-    }
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
 
-    /* Lists */
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
 
-    /* Skills tags */
-    .skills, .languages, .soft-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skills span, .languages span, .soft-skills span {
-      background: #eef2ff;
-      color: var(--primary);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
 
-    /* Contact */
-    .contact-list {
-      list-style: none;
-      padding: 0;
-    }
-    .contact-list li { margin-bottom: 8px; }
-    .contact-list a { color: var(--accent); text-decoration: none; font-weight: 600; }
-    .contact-list a:hover { text-decoration: underline; }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1.2rem;
-      background: var(--primary);
-      color: #fff;
-      margin-top: 2rem;
-    }
+        nav ul li {
+            margin-left: 30px;
+        }
 
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      nav ul { flex-wrap: wrap; }
-    }
-  </style>
+        nav ul a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main Sections */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--background-dark);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 15px;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        /* About Section */
+        .details {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 30px;
+            color: var(--subtle-text);
+        }
+
+        /* Card Component */
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--subtle-text);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tags span {
+            background: var(--background-dark);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Internship Section */
+        #internship ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        #internship li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        #internship li::before {
+            content: "\f058"; /* Checkmark icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+
+            header {
+                min-height: 60vh;
+                padding: 2rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .details {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#internship">Internship</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Pradeep Gurjar</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#internship">Internship</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <header>
-    <h1>Pradeep Gurjar</h1>
-    <p>Cyber Security Student — Sikar, Rajasthan</p>
-  </header>
+    <header>
+        <div class="container">
+            <h1>Pradeep Gurjar</h1>
+            <p>Cyber Security Student | Sikar, Rajasthan</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:pgujarsec@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:7877688211"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Motivated second-year Computer Science Engineering (Cyber Security) student with a strong foundation in cybersecurity principles and problem-solving. 
-        Seeking an entry-level opportunity to apply technical skills and contribute to innovative projects. 
-        Eager to learn, collaborate, and deliver impactful solutions in a dynamic team environment.
-      </p>
-      <p><strong>Location:</strong> Sikar, Rajasthan | <strong>CGPA:</strong> 7.40</p>
-    </section>
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2><i class="fas fa-user-circle icon"></i> About Me</h2>
+                <p>
+                    I'm a motivated second-year Computer Science Engineering (Cyber Security) student with a strong passion for solving complex problems. I'm currently seeking an entry-level role to leverage my technical skills and contribute to impactful, innovative projects. I thrive in dynamic team environments and am always eager to learn and grow.
+                </p>
+                <div class="details">
+                    <span><strong>Location:</strong> Sikar, Rajasthan</span>
+                    <span><strong>Current CGPA:</strong> 7.40</span>
+                </div>
+            </div>
+        </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>B.Tech in Computer Science Engineering (Cyber Security)</strong><br>
-            Sobhasaria Group of Institutions, Sikar — BTU (2023-2027) | CGPA: 7.40</li>
-        <li><strong>Higher Secondary Education (2023)</strong><br>
-            Gyandev Public School, Sikar (RBSE) | PCM | 85.20%</li>
-        <li><strong>Secondary Education (2021)</strong><br>
-            Govt. School, Sikar (RBSE) | 86.20%</li>
-      </ul>
-    </section>
+        <section id="education">
+            <div class="container">
+                <h2><i class="fas fa-graduation-cap icon"></i> Education</h2>
+                <div class="card">
+                    <h3>B.Tech in Computer Science Engineering (Cyber Security)</h3>
+                    <p>Sobhasaria Group of Institutions, Sikar — BTU (2023-2027)</p>
+                    <p><strong>CGPA:</strong> 7.40</p>
+                </div>
+                <div class="card">
+                    <h3>Higher Secondary Education (2023)</h3>
+                    <p>Gyandev Public School, Sikar (RBSE) | PCM</p>
+                    <p><strong>Percentage:</strong> 85.20%</p>
+                </div>
+                <div class="card">
+                    <h3>Secondary Education (2021)</h3>
+                    <p>Govt. School, Sikar (RBSE)</p>
+                    <p><strong>Percentage:</strong> 86.20%</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="skills">
-        <span>OOPs</span>
-        <span>DSA</span>
-        <span>Basic Cyber Security</span>
-      </div>
+        <section id="skills">
+            <div class="container">
+                <h2><i class="fas fa-cogs icon"></i> Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <div class="tags">
+                            <span>OOPs</span>
+                            <span>Data Structures & Algorithms (DSA)</span>
+                            <span>Basic Cyber Security</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <div class="tags">
+                            <span>Collaboration</span>
+                            <span>Problem Solving</span>
+                            <span>Critical Thinking</span>
+                            <span>Time Management</span>
+                            <span>Quick Learning</span>
+                            <span>Management</span>
+                            <span>Leadership</span>
+                            <span>Public Speaking</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="tags">
+                            <span>Hindi</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <h2>Languages</h2>
-      <div class="languages">
-        <span>Hindi</span>
-        <span>English</span>
-      </div>
+        <section id="internship">
+            <div class="container">
+                <h2><i class="fas fa-briefcase icon"></i> Internship</h2>
+                <div class="card">
+                    <h3>Cyber Security Intern</h3>
+                    <p>Eximius Tech Innovations Pvt. Ltd. | 06/2024 - 07/2024</p>
+                    <ul>
+                        <li>Successfully completed a one-month internship, gaining hands-on experience in cybersecurity.</li>
+                        <li>Collaborated with the team to identify potential risks and develop effective mitigation strategies.</li>
+                        <li>Gained practical knowledge of various security protocols and threat analysis techniques.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-      <h2>Soft Skills</h2>
-      <div class="soft-skills">
-        <span>Management</span><span>Public Speaking</span><span>Leadership</span>
-        <span>Critical Thinking</span><span>Time Management</span>
-        <span>Collaboration</span><span>Problem Solving</span><span>Quick Learning</span>
-      </div>
-    </section>
+        <section id="contact">
+            <div class="container">
+                <h2><i class="fas fa-envelope-open-text icon"></i> Contact</h2>
+                <div class="card">
+                    <p>Feel free to reach out to me for professional inquiries or collaborations.</p>
+                    <ul class="contact-list">
+                        <li><strong>Phone:</strong> 7877688211</li>
+                        <li><strong>Email:</strong> <a href="mailto:pgujarsec@gmail.com">pgujarsec@gmail.com</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank">linkedin.com/in/pgurjarsec</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section id="internship">
-      <h2>Internship</h2>
-      <p><strong>Eximius Tech Innovations Pvt. Ltd.</strong><br>
-        Cyber Security | 06/2024 - 07/2024<br>
-        Successfully completed a one-month internship focused on Cyber Security. 
-        Collaborated with the team to identify potential risks and implement solutions. 
-        Gained practical experience in protocols and threat analysis.
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><strong>Phone:</strong> 7877688211</li>
-        <li><strong>Email:</strong> <a href="mailto:pgujarsec@gmail.com">pgujarsec@gmail.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank">pgurjarsec</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2024 Pradeep Gurjar
-  </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Pradeep Gurjar. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
