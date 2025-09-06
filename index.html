@@ -1,116 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pradeep Gurjar - Cyber Security Student</title>
+  <meta name="description" content="Pradeep Gurjar is a Cyber Security student specializing in SOC operations, Cloud Security, and Azure. Explore his portfolio to learn more about his skills, internships, and projects.">
+  <meta name="keywords" content="Pradeep Gurjar, Cyber Security, SOC, Cloud Security, Azure, CrowdStrike, Microsoft Certified AZ-900">
+  <meta name="author" content="Pradeep Gurjar">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #0056b3;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      margin: 5px 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      border-left: 4px solid #0056b3;
-      padding-left: 10px;
-      margin-top: 30px;
-      font-size: 1.3rem;
-      color: #0056b3;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 8px 0;
-    }
-    a {
-      color: #0056b3;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
-    }
+    body { margin:0; font-family:monospace; background:#000; color:#00ff77; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1rem; border-bottom:1px solid #00ff77; }
+    nav a { color:#00ff77; text-decoration:none; margin-left:20px; }
+    nav a:hover { color:#fff; }
+    .content { display:flex; justify-content:center; align-items:center; min-height:80vh; text-align:center; }
+    .home-container { max-width:600px; }
+    .profile-photo { width:150px; height:150px; border-radius:50%; border:2px solid #00ff77; margin-bottom:1rem; }
+    .name { font-size:2rem; margin:0.5rem 0; }
+    .job-title { color:#7fffd4; margin-bottom:1rem; }
+    .buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:1rem; }
+    .btn { padding:10px 16px; border:1px solid #00ff77; border-radius:5px; color:#00ff77; text-decoration:none; transition:0.2s; }
+    .btn:hover { background:#00ff77; color:#000; }
+    #blinking { animation:blink 1s infinite; }
+    @keyframes blink { 50% { opacity:0; } }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">Pradeep@Home<span id="blinking">#</span></div>
+    <div class="menu-links">
+      <a href="index.html" class="menu-link">Home</a>
+      <a href="about.html" class="menu-link">About Me</a>
+    </div>
+  </nav>
 
-<header>
-  <h1>Pradeep Gurjar</h1>
-  <p>Cyber Security Student</p>
-  <p>📞 7877688211 | ✉️ <a href="mailto:pgujarsec@gmail.com" style="color:white;">pgujarsec@gmail.com</a></p>
-  <p><a href="https://www.linkedin.com/in/pgurjarsec" target="_blank" style="color:yellow;">LinkedIn Profile</a></p>
-  <p>📍 Sikar, Rajasthan</p>
-</header>
-
-<div class="container">
-  <h2>About Me</h2>
-  <p>I am a second-year CSE (Cyber Security) student with skills in cybersecurity, seeking an entry-level position to apply my technical knowledge and problem-solving abilities in a dynamic team environment. I am excited about contributing to innovative projects and enhancing my technical skills to drive impactful solutions.</p>
-
-  <h2>Education</h2>
-  <ul>
-    <li><b>B.Tech in Computer Science Engineering (Cyber Security)</b> (2023-2027)<br>Sobhasaria Group of Institutions, Sikar (BTU Affiliated) | CGPA: 7.40</li>
-    <li><b>Higher Secondary Education (2023)</b> - Gyandev Public School, Sikar (RBSE) | 85.20% (PCM)</li>
-    <li><b>Secondary Education (2021)</b> - Government School, Sikar (RBSE) | 86.20%</li>
-  </ul>
-
-  <h2>Internship</h2>
-  <p><b>Eximius Tech Innovations Private Limited</b> | Cyber Security | 06/2024 - 07/2024<br>
-  Completed a one-month internship focused on Cyber Security. Worked with the team to identify potential security risks and implement solutions. Gained practical experience in cybersecurity protocols and threat analysis.</p>
-
-  <h2>Technical Skills</h2>
-  <ul>
-    <li>OOPs</li>
-    <li>DSA</li>
-    <li>Basic Cyber Security</li>
-  </ul>
-
-  <h2>Soft Skills</h2>
-  <ul>
-    <li>Management Skills</li>
-    <li>Public Speaking & Leadership</li>
-    <li>Critical Thinking</li>
-    <li>Time Management</li>
-    <li>Flexibility and Collaboration</li>
-    <li>Problem Solving and Quick Learning</li>
-  </ul>
-
-  <h2>Languages Known</h2>
-  <p>English, Hindi</p>
-</div>
-
-<div class="footer">
-  © 2025 Pradeep Gurjar | Cyber Security Student
-</div>
-
+  <main class="content">
+    <div class="home-container">
+      <img src="images/me.png" alt="Pradeep Gurjar" class="profile-photo"/>
+      <h1 class="name">Pradeep Gurjar</h1>
+      <p class="job-title">Cyber Security Student | SOC & Cloud Security Enthusiast</p>
+      <div class="buttons">
+        <a href="about.html" class="btn">About Me</a>
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+        <a href="https://www.linkedin.com/in/pgurjarsec" class="btn" target="_blank">LinkedIn</a>
+        <a href="https://github.com/pradeepgurjar" class="btn" target="_blank">GitHub</a>
+        <a href="mailto:pgujarsec@gmail.com" class="btn">Email Me</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
