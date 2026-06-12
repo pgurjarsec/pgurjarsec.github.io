@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,61 +22,41 @@
       --text-dim:    #6b6b6b;
       --mono:        'Share Tech Mono', monospace;
       --sans:        'Inter', sans-serif;
-      --max-w:       900px;
+      --max-w:       740px;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.8; }
     a { color: var(--green); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(13,13,13,0.95); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px;
-    }
+
+    /* Nav — only the top site nav bar */
+    header.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
     .nav-brand { font-family: var(--mono); color: var(--green); font-size: 1rem; letter-spacing: 0.05em; }
     .nav-brand span { color: var(--text-dim); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-family: var(--mono); font-size: 0.85rem; color: var(--text); letter-spacing: 0.08em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); text-decoration: none; }
+
+    /* Fix scroll offset so sticky nav doesn't cover anchor targets */
+    html { scroll-padding-top: 72px; }
+
+    /* Layout */
     .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 3rem 1.5rem 5rem; }
     .breadcrumb { font-family: var(--mono); font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 2.5rem; display: flex; gap: 0.5rem; align-items: center; }
     .breadcrumb a { color: var(--green-dim); }
     .breadcrumb span { color: var(--border); }
-    .post-hero { margin-bottom: 2.5rem; }
+
+    /* Hero */
+    .post-hero { margin-bottom: 3rem; }
     .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
     .tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; padding: 0.2rem 0.55rem; border: 1px solid var(--border); color: var(--green-dim); border-radius: 2px; }
     .post-title { font-family: var(--mono); font-size: clamp(1.4rem, 4vw, 2rem); color: var(--green); font-weight: 400; line-height: 1.35; margin-bottom: 1rem; }
     .post-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.05em; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-bottom: 1.5rem; }
-   .post-cover {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    margin: 0 0 3rem 0;
-    object-fit: contain;
-}
-    .toc { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; margin-bottom: 3rem; }
-    .toc-title { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em; color: var(--green); text-transform: uppercase; margin-bottom: 1rem; }
-    .toc ol {
-    padding-left: 1.5rem;
-    margin: 0;
-    display: block;
-}
 
-.toc li {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-}
+    /* Images */
+    .post-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); display: block; margin: 1.5rem 0; }
 
-.toc a {
-    display: inline-block;
-    width: 100%;
-    word-break: break-word;
-}
-    .toc a { font-family: var(--mono); font-size: 0.82rem; color: var(--text-dim); transition: color 0.2s; }
-    .toc a:hover { color: var(--green); text-decoration: none; }
+    /* Prose */
     .prose { color: var(--text); }
     .prose p { margin-bottom: 1.25rem; font-size: 0.97rem; }
     .prose h2 { font-family: var(--mono); font-size: 1.2rem; color: var(--green); font-weight: 400; margin: 3rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); letter-spacing: 0.04em; }
@@ -85,12 +64,15 @@
     .prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
     .prose li { font-size: 0.97rem; margin-bottom: 0.4rem; }
     .prose strong { color: #e8e8e8; font-weight: 600; }
-    .prose em { color: var(--green-dim); font-style: normal; }
+
+    /* Code */
     pre { background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--green-dim); border-radius: 4px; padding: 1.25rem 1.5rem; overflow-x: auto; margin: 1.25rem 0 1.5rem; }
     pre code { font-family: var(--mono); font-size: 0.82rem; color: #a8ffa8; line-height: 1.7; white-space: pre; }
     .code-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.35rem; }
     code { font-family: var(--mono); font-size: 0.82em; background: var(--bg3); border: 1px solid var(--border); padding: 0.1em 0.4em; border-radius: 2px; color: var(--green-dim); }
     pre code { background: none; border: none; padding: 0; }
+
+    /* Step Box */
     .step-box { border: 1px solid var(--border); border-radius: 4px; margin: 2rem 0; overflow: hidden; }
     .step-header { background: var(--bg3); padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--border); }
     .step-num { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--green); background: var(--green-muted); border: 1px solid var(--green-dim); padding: 0.15rem 0.5rem; border-radius: 2px; white-space: nowrap; }
@@ -99,60 +81,57 @@
     .step-body p { margin-bottom: 1rem; font-size: 0.95rem; }
     .step-body ul, .step-body ol { padding-left: 1.25rem; margin-bottom: 1rem; }
     .step-body li { font-size: 0.95rem; margin-bottom: 0.35rem; }
-    .step-body h3 { font-family: var(--mono); font-size: 0.9rem; color: #d0ffd0; font-weight: 400; margin: 1.5rem 0 0.6rem; }
+
+    /* Info / Warn boxes */
     .info-box { background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--green-dim); border-radius: 4px; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.9rem; }
     .info-box .info-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; color: var(--green); text-transform: uppercase; margin-bottom: 0.4rem; }
     .warn-box { background: #1a1200; border: 1px solid #3a2a00; border-left: 3px solid #ffaa00; border-radius: 4px; padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.9rem; }
     .warn-box .warn-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; color: #ffaa00; text-transform: uppercase; margin-bottom: 0.4rem; }
+
+    /* Table */
     .table-wrap { overflow-x: auto; margin: 1.25rem 0; }
     table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
     th { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-dim); background: var(--bg3); border: 1px solid var(--border); padding: 0.6rem 1rem; text-align: left; }
     td { border: 1px solid var(--border); padding: 0.6rem 1rem; color: var(--text); vertical-align: top; }
     tr:nth-child(even) td { background: var(--bg3); }
-    .screenshot-img { width: 100%; border-radius: 4px; border: 1px solid var(--border); display: block; margin: 1.25rem 0; }
+
+    /* TOC */
+    .toc { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; margin-bottom: 3rem; position: relative; z-index: 1; }
+    .toc-title { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em; color: var(--green); text-transform: uppercase; margin-bottom: 1rem; }
+    .toc ol { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem; }
+    .toc a { font-family: var(--mono); font-size: 0.82rem; color: var(--text-dim); transition: color 0.2s; }
+    .toc a:hover { color: var(--green); text-decoration: none; }
+
     .divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+    /* Post footer */
     .post-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .back-link { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; color: var(--green-dim); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
     .back-link:hover { gap: 0.7rem; text-decoration: none; color: var(--green); }
     .share-links { display: flex; gap: 1rem; font-family: var(--mono); font-size: 0.75rem; }
     .share-links a { color: var(--text-dim); }
     .share-links a:hover { color: var(--green); text-decoration: none; }
+
     footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); }
     footer a { color: var(--green-dim); }
+
     @media (max-width: 600px) {
       .nav-links { gap: 1.2rem; }
       .article-wrap { padding: 2rem 1.25rem 4rem; }
       pre { padding: 1rem; }
-    }@media (max-width: 768px) {
-
-  .article-wrap {
-      padding: 1.5rem 1rem 3rem;
-  }
-
-  .toc {
-      overflow-x: auto;
-  }
-
-  .post-cover {
-      max-height: 250px;
-  }
-
-  table {
-      min-width: 600px;
-  }
-}
+    }
   </style>
 </head>
 <body>
 
-  <nav>
+  <header class="site-nav">
     <div class="nav-brand">Pradeep<span>@</span>Home#</div>
     <ul class="nav-links">
       <li><a href="/index.html">Home</a></li>
       <li><a href="/about.html">About Me</a></li>
       <li><a href="/blog.html">Blog</a></li>
     </ul>
-  </nav>
+  </header>
 
   <div class="article-wrap">
 
@@ -176,15 +155,14 @@
         <span>June 10, 2026</span>
         <span>8 min read</span>
       </div>
-      <!-- Cover image: final result screenshot -->
       <img
         src="/images/blog/logs-in-splunk.png.PNG"
-        class="post-cover"
+        class="post-img"
         alt="Windows Logs flowing in Splunk Cloud"
       />
     </header>
 
-    <nav class="toc" aria-label="Table of contents">
+    <div class="toc" aria-label="Table of contents">
       <div class="toc-title">// Table of Contents</div>
       <ol>
         <li><a href="#introduction">Introduction</a></li>
@@ -199,17 +177,13 @@
         <li><a href="#troubleshooting">Troubleshooting</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ol>
-    </nav>
+    </div>
 
     <article class="prose">
 
       <h2 id="introduction">Introduction</h2>
-      <p>
-        As a Cyber Security student learning SOC operations, one of the first hands-on skills you need is getting data into a SIEM. Splunk Cloud is one of the most widely used SIEM platforms in the industry, and Windows Event Logs are the most common data source in enterprise environments.
-      </p>
-      <p>
-        In this guide, I'll walk you through the complete process of sending Windows Event Logs (Application, Security, and System) to your Splunk Cloud Trial account — from creating indexes to verifying data flow. I documented every step while doing this myself, including the real errors I hit and how I fixed them.
-      </p>
+      <p>As a Cyber Security student learning SOC operations, one of the first hands-on skills you need is getting data into a SIEM. Splunk Cloud is one of the most widely used SIEM platforms in the industry, and Windows Event Logs are the most common data source in enterprise environments.</p>
+      <p>In this guide, I walk you through the complete process of sending Windows Event Logs — Application, Security, and System — to your Splunk Cloud Trial account. I documented every step while doing this myself on my own Windows laptop, including the real errors I hit and how I fixed them.</p>
       <div class="info-box">
         <div class="info-label">// What you will achieve</div>
         Your Windows laptop will send live Event Logs to Splunk Cloud in real time. You will be able to search and analyze them using SPL (Splunk Processing Language).
@@ -222,7 +196,7 @@
         <li>Windows 10 or 11 laptop with <strong>Administrator access</strong></li>
         <li>A free <strong>Splunk Cloud Trial</strong> account — <a href="https://www.splunk.com/en_us/download/splunk-cloud-trial.html" target="_blank">sign up here</a></li>
         <li><strong>Notepad++</strong> installed — <a href="https://notepad-plus-plus.org/downloads/" target="_blank">download here</a> (do NOT use regular Notepad)</li>
-        <li>Port <strong>TCP 9997 outbound</strong> open on your network/firewall</li>
+        <li>Port <strong>TCP 9997 outbound</strong> open on your network</li>
         <li>PowerShell running as <strong>Administrator</strong></li>
       </ul>
       <div class="warn-box">
@@ -239,14 +213,10 @@
           <span class="step-title-text">Log in to Splunk Cloud Trial</span>
         </div>
         <div class="step-body">
-          <p>Open your browser and navigate to your Splunk Cloud trial URL:</p>
+          <p>Open your browser and go to your Splunk Cloud trial URL:</p>
           <pre><code>https://prd-p-XXXXXX.splunkcloud.com</code></pre>
-          <p>Log in with your admin credentials. You should land on the Splunk Cloud home dashboard.</p>
-          <img
-            src="/images/blog/splunk-dashboard.png.PNG"
-            class="screenshot-img"
-            alt="Splunk Cloud dashboard after login"
-          />
+          <p>Log in with your admin credentials. You land on the Splunk Cloud home dashboard.</p>
+          <img src="/images/blog/splunk-dashboard.png.PNG" class="post-img" alt="Splunk Cloud Dashboard after login" />
         </div>
       </div>
 
@@ -257,17 +227,13 @@
           <span class="step-title-text">Create Index in Splunk Cloud</span>
         </div>
         <div class="step-body">
-          <p>Splunk stores data in <strong>indexes</strong>. You need to create one before data can be sent to it. Think of an index like a dedicated folder for a specific type of log.</p>
+          <p>Splunk stores data in <strong>indexes</strong>. You need to create one before data can flow into it. Think of an index as a dedicated folder for a specific type of log.</p>
           <ol>
             <li>Click <strong>Settings</strong> in the top navigation</li>
             <li>Click <strong>Indexes</strong></li>
             <li>Click <strong>New Index</strong></li>
           </ol>
-          <img
-            src="/images/blog/indexes-page.png.PNG"
-            class="screenshot-img"
-            alt="Settings → Indexes page in Splunk Cloud"
-          />
+          <img src="/images/blog/indexes-page.png.PNG" class="post-img" alt="Splunk Cloud Indexes page" />
           <p>Fill in the following fields:</p>
           <div class="table-wrap">
             <table>
@@ -280,14 +246,10 @@
             </table>
           </div>
           <p>Click <strong>Save</strong>.</p>
-          <img
-            src="/images/blog/new-index-form.png"
-            class="screenshot-img"
-            alt="New Index form filled with wineventlog"
-          />
+          <img src="/images/blog/new-index-form.png" class="post-img" alt="New Index form filled with wineventlog" />
           <div class="info-box">
             <div class="info-label">// Important</div>
-            The index name <code>wineventlog</code> must match exactly what you put in <code>inputs.conf</code> later — same spelling, all lowercase.
+            The index name <code>wineventlog</code> must match exactly what you put in <code>inputs.conf</code> later — same spelling, all lowercase. If they don't match, your data gets dropped or lands in the wrong index.
           </div>
         </div>
       </div>
@@ -299,18 +261,19 @@
           <span class="step-title-text">Download Universal Forwarder Credentials</span>
         </div>
         <div class="step-body">
-          <p>The Universal Forwarder Credentials file (<code>splunkclouduf.spl</code>) contains your Splunk Cloud instance address, port 9997 endpoint, and SSL certificates — all pre-configured. This tells your forwarder <strong>where to send data</strong>.</p>
+          <p>The Universal Forwarder Credentials file (<code>splunkclouduf.spl</code>) contains your Splunk Cloud instance address, port 9997 endpoint, and SSL certificates — all pre-configured. This is what tells your forwarder <strong>where to send data</strong>.</p>
           <ol>
             <li>Click <strong>Apps</strong> in the top navigation</li>
             <li>Click <strong>Universal Forwarder</strong></li>
             <li>Click <strong>"Download Universal Forwarder Credentials"</strong></li>
           </ol>
-          <img
-            src="/images/blog/download-credentials.png"
-            class="screenshot-img"
-            alt="Download Universal Forwarder Credentials button"
-          />
-          <p>Save the downloaded file. It will be named <code>splunkclouduf.spl</code>.</p>
+          <img src="/images/blog/download-credentials.png" class="post-img" alt="Download Universal Forwarder Credentials button" />
+          <p>The file downloads as:</p>
+          <pre><code>splunkclouduf.spl</code></pre>
+          <div class="info-box">
+            <div class="info-label">// What is this file?</div>
+            The <code>.spl</code> file is a <code>.tar.gz</code> archive containing a pre-configured <code>outputs.conf</code>. When installed on your forwarder, it automatically points to your Splunk Cloud instance — no manual address entry needed.
+          </div>
         </div>
       </div>
 
@@ -324,43 +287,21 @@
           <h3>Download</h3>
           <p>Go to the Splunk Universal Forwarder download page and select <strong>Windows 64-bit .msi</strong>:</p>
           <pre><code>https://www.splunk.com/en_us/download/universal-forwarder.html</code></pre>
-
           <h3>Install</h3>
           <ol>
             <li>Double-click the downloaded <code>.msi</code> file</li>
             <li>Accept the <strong>License Agreement</strong></li>
-            <li>Select the <strong>"Splunk Cloud"</strong> option</li>
-          </ol>
-          <img
-            src="/images/blog/installer-splunkcloud.png.PNG"
-            class="screenshot-img"
-            alt="Universal Forwarder installer — Splunk Cloud option selected"
-          />
-          <ol start="4">
-            <li>Set credentials:</li>
-          </ol>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Field</th><th>Value</th></tr></thead>
-              <tbody>
-                <tr><td>Username</td><td><code>admin</code></td></tr>
-                <tr><td>Password</td><td>Something memorable — avoid <code>@#$</code> special characters to prevent PowerShell issues</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="warn-box">
-            <div class="warn-label">⚠ Remember This Password</div>
-            You will need this password when running CLI commands later. If it contains special characters like <code>@</code> or <code>#</code>, wrap it in single quotes in PowerShell: <code>'MyPass@123'</code>.
-          </div>
-          <ol start="5">
+            <li>Select the <strong>Splunk Cloud</strong> option</li>
+            <li>Set your credentials (username: <code>admin</code>, choose a password you will remember)</li>
             <li>Leave <strong>Deployment Server</strong> blank</li>
             <li>Click <strong>Next → Install</strong></li>
           </ol>
-          <img
-            src="/images/blog/install-complete.png.PNG"
-            class="screenshot-img"
-            alt="Universal Forwarder installation complete"
-          />
+          <img src="/images/blog/installer-splunkcloud.png.PNG" class="post-img" alt="Universal Forwarder installer with Splunk Cloud option selected" />
+          <div class="warn-box">
+            <div class="warn-label">⚠ Remember This Password</div>
+            You will need this password when running CLI commands. If your password contains special characters like <code>@</code> or <code>#</code>, wrap it in single quotes in PowerShell — e.g. <code>'MyPass@123'</code>.
+          </div>
+          <img src="/images/blog/install-complete.png.PNG" class="post-img" alt="Universal Forwarder installation complete" />
         </div>
       </div>
 
@@ -380,17 +321,22 @@
           <h3>2. Verify what was extracted</h3>
           <div class="code-label">// PowerShell</div>
           <pre><code>ls "C:\Users\Dell\Downloads\splunkclouduf_extracted"</code></pre>
-          <p>You should see a folder like <code>100_prd-p-kpfrw_splunkcloud</code>.</p>
+          <p>You should see:</p>
+          <pre><code>100_prd-p-kpfrw_splunkcloud</code></pre>
 
           <h3>3. Copy credentials to forwarder apps folder</h3>
           <div class="code-label">// PowerShell</div>
           <pre><code>Copy-Item "C:\Users\Dell\Downloads\splunkclouduf_extracted\*" "C:\Program Files\SplunkUniversalForwarder\etc\apps\" -Recurse -Force</code></pre>
 
-          <h3>4. Restart the forwarder</h3>
+          <h3>4. Verify the copy</h3>
+          <div class="code-label">// PowerShell</div>
+          <pre><code>ls "C:\Program Files\SplunkUniversalForwarder\etc\apps\"</code></pre>
+
+          <h3>5. Restart the forwarder</h3>
           <div class="code-label">// PowerShell</div>
           <pre><code>Restart-Service SplunkForwarder</code></pre>
 
-          <h3>5. Verify connection to Splunk Cloud</h3>
+          <h3>6. Verify connection to Splunk Cloud</h3>
           <div class="code-label">// PowerShell</div>
           <pre><code>cd "C:\Program Files\SplunkUniversalForwarder\bin"
 .\splunk.exe list forward-server</code></pre>
@@ -399,18 +345,14 @@
         inputs.prd-p-kpfrw.splunkcloud.com:9997 (ssl)
 Configured but inactive forwards:
         None</code></pre>
-          <img
-            src="/images/blog/active-forwards.png.PNG"
-            class="screenshot-img"
-            alt="PowerShell showing Active forwards connected to Splunk Cloud"
-          />
+          <img src="/images/blog/active-forwards.png.PNG" class="post-img" alt="PowerShell showing Active forwards connected to Splunk Cloud" />
           <div class="info-box">
             <div class="info-label">// Success Signal</div>
             Seeing <code>inputs.prd-p-kpfrw.splunkcloud.com:9997 (ssl)</code> under Active forwards confirms your forwarder is connected to Splunk Cloud. This is a key milestone!
           </div>
           <div class="warn-box">
-            <div class="warn-label">⚠ Login Failing at CLI?</div>
-            If login keeps failing, it is often because of special characters in the password. Keep trying — it usually succeeds after 1–2 attempts. Or wrap the password in single quotes: <code>-auth 'splunk:YourPass@123'</code>.
+            <div class="warn-label">⚠ Login Failing at CLI Prompt?</div>
+            If login fails due to special characters in your password, just keep trying — it usually works after 1–2 attempts. You can also wrap the password in single quotes when using the <code>-auth</code> flag.
           </div>
         </div>
       </div>
@@ -419,36 +361,19 @@ Configured but inactive forwards:
       <div class="step-box" id="step6">
         <div class="step-header">
           <span class="step-num">STEP 06</span>
-          <span class="step-title-text">Install Splunk Add-on for Windows</span>
+          <span class="step-title-text">Install Splunk Add-on for Windows &amp; Create inputs.conf</span>
         </div>
         <div class="step-body">
-          <p>The Splunk Add-on for Windows provides the source types and field extractions needed to properly parse Windows Event Logs. Download it from <a href="https://splunkbase.splunk.com/app/742/" target="_blank">Splunkbase</a> and install it on your Splunk Cloud instance.</p>
-          <img
-            src="/images/blog/Install the Splunk Add-on for Windows.PNG"
-            class="screenshot-img"
-            alt="Installing the Splunk Add-on for Microsoft Windows"
-          />
-          <div class="info-box">
-            <div class="info-label">// Note</div>
-            On Splunk Cloud trial, the add-on may already be available in the app inventory. Go to <strong>Apps → Find More Apps</strong> and search for "Splunk Add-on for Microsoft Windows" — if it's already installed you can skip the manual upload.
-          </div>
-        </div>
-      </div>
+          <p>The <strong>Splunk Add-on for Windows</strong> provides the source types and field extractions needed to correctly parse Windows Event Logs. In our case it was already available in the Splunk Cloud app inventory.</p>
+          <img src="/images/blog/Install the Splunk Add-on for Windows.PNG" class="post-img" alt="Splunk Add-on for Windows installed" />
 
-      <!-- STEP 7 -->
-      <div class="step-box" id="step7">
-        <div class="step-header">
-          <span class="step-num">STEP 07</span>
-          <span class="step-title-text">Create inputs.conf</span>
-        </div>
-        <div class="step-body">
-          <p>The <code>inputs.conf</code> file tells the Universal Forwarder <strong>what data to collect</strong>. We configure it to collect Windows Event Logs from Application, Security, and System channels.</p>
+          <p>Now create the <code>inputs.conf</code> file which tells the Universal Forwarder <strong>what data to collect</strong>.</p>
 
           <h3>1. Create the app folder structure</h3>
           <div class="code-label">// PowerShell</div>
           <pre><code>mkdir "C:\Program Files\SplunkUniversalForwarder\etc\apps\my_windows_inputs\local"</code></pre>
 
-          <h3>2. Open Notepad++ and create inputs.conf</h3>
+          <h3>2. Create inputs.conf in Notepad++</h3>
           <p>Open <strong>Notepad++</strong> → <strong>File → New</strong> → paste this content exactly:</p>
           <div class="code-label">// inputs.conf</div>
           <pre><code>[WinEventLog://Application]
@@ -474,25 +399,27 @@ renderXml = true</code></pre>
             <li>Click <strong>File → Save As</strong></li>
             <li>Navigate to: <code>C:\Program Files\SplunkUniversalForwarder\etc\apps\my_windows_inputs\local\</code></li>
             <li>Set filename: <code>inputs.conf</code></li>
-            <li>Set <strong>Save as type</strong>: <strong>All Files (*.*)</strong></li>
+            <li>Set <strong>Save as type</strong> to: <strong>All Files (*.*)</strong></li>
             <li>Click <strong>Save</strong></li>
           </ol>
           <div class="warn-box">
             <div class="warn-label">⚠ Critical — File Extension</div>
-            If you use regular Notepad or select "Text Documents", the file saves as <code>inputs.conf.txt</code> which Splunk cannot read. Always use Notepad++ and select <strong>All Files (*.*)</strong>.
+            If you use regular Windows Notepad or select "Text Documents" in Save As, the file saves as <code>inputs.conf.txt</code> which Splunk cannot read. Always use Notepad++ and select <strong>All Files (*.*)</strong>.
           </div>
 
           <h3>4. Verify the file</h3>
-          <div class="code-label">// PowerShell</div>
+          <div class="code-label">// PowerShell — check filename</div>
           <pre><code>ls "C:\Program Files\SplunkUniversalForwarder\etc\apps\my_windows_inputs\local\"</code></pre>
           <p>Should show <code>inputs.conf</code> — NOT <code>inputs.conf.txt</code>.</p>
+          <div class="code-label">// PowerShell — check content</div>
+          <pre><code>type "C:\Program Files\SplunkUniversalForwarder\etc\apps\my_windows_inputs\local\inputs.conf"</code></pre>
         </div>
       </div>
 
-      <!-- STEP 8 -->
-      <div class="step-box" id="step8">
+      <!-- STEP 7 -->
+      <div class="step-box" id="step7">
         <div class="step-header">
-          <span class="step-num">STEP 08</span>
+          <span class="step-num">STEP 07</span>
           <span class="step-title-text">Restart Forwarder &amp; Verify Logs in Splunk Cloud</span>
         </div>
         <div class="step-body">
@@ -501,28 +428,23 @@ renderXml = true</code></pre>
           <pre><code>Restart-Service SplunkForwarder</code></pre>
 
           <h3>2. Wait 2–3 minutes</h3>
-          <p>Give the forwarder time to start, read the new <code>inputs.conf</code>, and begin shipping events to Splunk Cloud.</p>
+          <p>Give the forwarder time to start up, read the new <code>inputs.conf</code>, and begin shipping events to Splunk Cloud.</p>
 
           <h3>3. Search in Splunk Cloud</h3>
           <ol>
-            <li>Log in to Splunk Cloud</li>
+            <li>Log in to your Splunk Cloud trial</li>
             <li>Go to <strong>Apps → Search &amp; Reporting</strong></li>
             <li>Enter this search:</li>
           </ol>
           <div class="code-label">// SPL Search</div>
           <pre><code>index=wineventlog earliest=-15m</code></pre>
           <ol start="4">
-            <li>Set time range to <strong>Last 15 minutes</strong></li>
-            <li>Click the Search button</li>
+            <li>Set time to <strong>Last 15 minutes</strong> → click Search</li>
           </ol>
-          <img
-            src="/images/blog/logs-in-splunk.png.PNG"
-            class="screenshot-img"
-            alt="Windows Event Logs appearing in Splunk Cloud Search"
-          />
+          <img src="/images/blog/logs-in-splunk.png.PNG" class="post-img" alt="Windows Event Logs appearing in Splunk Cloud search results" />
           <div class="info-box">
-            <div class="info-label">// You should see this</div>
-            126 events appearing from your Windows machine — XML-formatted event data from Application, Security, and System logs. Congratulations, your logs are flowing! 🎉
+            <div class="info-label">// 🎉 Success</div>
+            If you see events like the screenshot above — Windows logs are flowing to Splunk Cloud in real time. You have successfully set up your first SIEM data source!
           </div>
         </div>
       </div>
@@ -530,43 +452,20 @@ renderXml = true</code></pre>
       <hr class="divider" />
 
       <h2 id="troubleshooting">Troubleshooting</h2>
-      <p>Here are the common issues I encountered and how I fixed them:</p>
+      <p>Here are the real issues I ran into during this setup and exactly how I fixed them:</p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr><th>Problem</th><th>Cause</th><th>Fix</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Login failed in PowerShell CLI</td>
-              <td>Special characters in password</td>
-              <td>Wrap password in single quotes: <code>'MyPass@123'</code> — or retry, it works after 1–2 attempts</td>
-            </tr>
-            <tr>
-              <td><code>inputs.conf</code> not found</td>
-              <td>Saved as <code>inputs.conf.txt</code></td>
-              <td>Run: <code>Rename-Item inputs.conf.txt inputs.conf</code></td>
-            </tr>
-            <tr>
-              <td>No logs in Splunk Cloud</td>
-              <td>Index name mismatch</td>
-              <td>Verify index name is exactly <code>wineventlog</code> in both Splunk Cloud and <code>inputs.conf</code></td>
-            </tr>
-            <tr>
-              <td>No active forwards</td>
-              <td>Credentials folder missing</td>
-              <td>Verify <code>100_prd-p-kpfrw_splunkcloud</code> exists in <code>etc\apps\</code></td>
-            </tr>
-            <tr>
-              <td>Cannot delete files during uninstall</td>
-              <td>Service still running</td>
-              <td>Run <code>Stop-Service SplunkForwarder</code> first, then use Control Panel to uninstall</td>
-            </tr>
-            <tr>
-              <td>Multiple commands fail at once</td>
-              <td>Pasting all on one line</td>
-              <td>Run each PowerShell command on a separate line, one at a time</td>
-            </tr>
+            <tr><td>Login failed in PowerShell CLI</td><td>Special characters (<code>@</code>, <code>#</code>) in password</td><td>Wrap in single quotes: <code>'MyPass@123'</code> — or keep retrying, works after 1–2 attempts</td></tr>
+            <tr><td><code>inputs.conf</code> not found</td><td>Saved as <code>inputs.conf.txt</code></td><td>Rename: <code>Rename-Item inputs.conf.txt inputs.conf</code></td></tr>
+            <tr><td>No logs in Splunk Cloud</td><td>Index name mismatch</td><td>Verify index name is exactly <code>wineventlog</code> in both Splunk Cloud and <code>inputs.conf</code></td></tr>
+            <tr><td>No active forwards</td><td>Credentials folder missing</td><td>Verify <code>100_prd-p-kpfrw_splunkcloud</code> exists in <code>etc\apps\</code></td></tr>
+            <tr><td>Cannot delete files during uninstall</td><td>Forwarder service still running</td><td>Run <code>Stop-Service SplunkForwarder</code> first, then use Control Panel → Uninstall</td></tr>
+            <tr><td>Multiple commands fail at once</td><td>Pasting all lines as one command</td><td>Run each PowerShell command separately, one line at a time</td></tr>
+            <tr><td>.spl file won't extract as zip</td><td>It is tar.gz not zip format</td><td>Use <code>tar -xzf</code> command instead of <code>Expand-Archive</code></td></tr>
           </tbody>
         </table>
       </div>
@@ -574,22 +473,20 @@ renderXml = true</code></pre>
       <hr class="divider" />
 
       <h2 id="conclusion">Conclusion</h2>
-      <p>
-        You have successfully set up the Splunk Universal Forwarder on your Windows machine and configured it to send Windows Event Logs — Application, Security, and System — to your Splunk Cloud instance in real time.
-      </p>
-      <p>
-        This is a foundational SOC skill. In a real enterprise environment, you would deploy this across hundreds of machines using a Deployment Server, but the core concepts are exactly the same as what you did here.
-      </p>
+      <p>You have successfully set up the Splunk Universal Forwarder on your Windows machine and configured it to send Windows Event Logs — Application, Security, and System — to Splunk Cloud in real time.</p>
+      <p>This is a foundational skill for any SOC analyst. In a real enterprise environment you would deploy this across hundreds of machines using a Deployment Server, but the core concepts are identical to what we did here.</p>
+
       <h3>What's next?</h3>
       <ul>
-        <li>Build a <strong>dashboard</strong> to visualize login attempts and failed authentications</li>
-        <li>Set up <strong>alerts</strong> for Event ID 4625 (failed logins)</li>
+        <li>Build a <strong>dashboard</strong> in Splunk Cloud to visualize login attempts and failed authentications</li>
+        <li>Set up <strong>alerts</strong> for Event ID 4625 (failed logins) and Event ID 4688 (new process creation)</li>
         <li>Try onboarding <strong>Linux logs</strong> using the same Universal Forwarder approach</li>
-        <li>Explore the <strong>Splunk Add-on for Windows</strong> for performance and Active Directory data</li>
+        <li>Explore the <strong>Splunk Add-on for Windows</strong> for advanced collection — performance metrics, Active Directory, DNS</li>
       </ul>
+
       <div class="info-box">
         <div class="info-label">// Trial Tip</div>
-        Splunk Cloud trials last 14 days with ~500 MB/day ingest. Windows Security logs can be verbose — start with Application and System, then enable Security once comfortable.
+        Splunk Cloud trials last 14 days with ~500 MB/day ingest. Windows Security logs can be very verbose — start with just Application and System to stay within limits, then enable Security logs once comfortable.
       </div>
 
     </article>
@@ -597,7 +494,7 @@ renderXml = true</code></pre>
     <div class="post-footer">
       <a href="/blog.html" class="back-link">← Back to Blog</a>
       <div class="share-links">
-        <span style="color:var(--text-dim); font-family:var(--mono); font-size:0.75rem;">Share:</span>
+        <span style="color:var(--text-dim);font-family:var(--mono);font-size:0.75rem;">Share:</span>
         <a href="https://twitter.com/intent/tweet?text=How+to+Send+Windows+Logs+to+Splunk+Cloud&url=https://pradeepgurjar.me/blogs/windows-logs-splunk-cloud.html" target="_blank">Twitter</a>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://pradeepgurjar.me/blogs/windows-logs-splunk-cloud.html" target="_blank">LinkedIn</a>
       </div>
