@@ -1,89 +1,364 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Pradeep Gurjar, a final-year Cyber Security student aspiring to become a SOC L1 Analyst. Explore his experience, skills, projects and certifications." />
   <title>About - Pradeep Gurjar</title>
+
   <style>
-    body { margin:0; font-family:monospace; background:#000; color:#00ff77; line-height:1.6; }
-    nav { display:flex; justify-content:space-between; align-items:center; padding:1rem; border-bottom:1px solid #00ff77; }
-    nav a { color:#00ff77; text-decoration:none; margin-left:20px; }
-    nav a:hover { color:#fff; }
-    .content { max-width:800px; margin:2rem auto; padding:1rem; }
-    h1, h2 { color:#00ff77; }
-    ul { margin-left:20px; }
-    a { color:#7fffd4; }
-    #blinking { animation:blink 1s infinite; }
-    @keyframes blink { 50% { opacity:0; } }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: monospace;
+      background: #000;
+      color: #00ff77;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 1rem 5%;
+      border-bottom: 1px solid #00ff77;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #00ff77;
+      text-decoration: none;
+      margin-left: 18px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 1.5rem 3rem;
+    }
+
+    h1, h2 {
+      color: #00ff77;
+    }
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 1px solid #00ff77;
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.35rem;
+    }
+
+    h3 {
+      color: #7fffd4;
+      margin-bottom: 4px;
+    }
+
+    p, li {
+      color: #d0d0d0;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: #7fffd4;
+      overflow-wrap: anywhere;
+    }
+
+    .intro {
+      border-left: 3px solid #00ff77;
+      padding: 12px 18px;
+      background: #07110b;
+    }
+
+    .role {
+      margin-bottom: 24px;
+    }
+
+    .date {
+      color: #8cffa9;
+      font-size: 0.9rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills li {
+      border: 1px solid #00ff77;
+      border-radius: 4px;
+      padding: 5px 10px;
+      margin: 0;
+      color: #7fffd4;
+    }
+
+    .contact p {
+      margin: 8px 0;
+    }
+
+    #blinking {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #164d2d;
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 1rem;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+
+      .content {
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="logo">Pradeep@About<span id="blinking">#</span></div>
     <div class="menu-links">
-      <a href="index.html" class="menu-link">Home</a>
-      <a href="about.html" class="menu-link">About Me</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
     </div>
   </nav>
 
   <main class="content">
     <h1>About Me</h1>
-    <p>
-      I am a final-year CSE (Cyber Security) student with practical knowledge in SOC operations
-      and cloud security. I hold the <b>Microsoft Certified: Azure Fundamentals (AZ-900)</b>
-      certification and have hands-on experience with tools like <b>CrowdStrike EDR</b>, 
-      Azure Sentinel, and Microsoft Entra. I am seeking an entry-level role to apply my 
-      skills and contribute to impactful cybersecurity projects.
+
+    <p class="intro">
+      I am a final-year B.Tech Computer Science Engineering student
+      specializing in Cyber Security at Sobhasaria Group of Institutions,
+      Sikar. I have practical exposure to SOC monitoring, SIEM-based log
+      analysis, alert triage, phishing investigation, endpoint security,
+      and cloud security. I have worked with tools such as Splunk Enterprise,
+      Microsoft Sentinel, CrowdStrike EDR, Microsoft Defender for Office 365,
+      and Microsoft Entra ID. I am seeking an entry-level SOC L1 Analyst
+      role where I can apply my knowledge, investigate security alerts,
+      and contribute to incident response and threat monitoring.
     </p>
 
-    <h2>Internship Experience</h2>
-    <ul>
-      <li><b>Celebal Technologies – Cloud Infrastructure & Security Intern (Jun 2025 – Aug 2025)</b>
-        <ul>
-          <li>Worked with Azure Sentinel & Defender for Office365.</li>
-          <li>Handled Microsoft 365 security & administration (SSRP, Conditional Access, MFA, Password Policies).</li>
-          <li>Gained hands-on experience with Microsoft Entra.</li>
-        </ul>
-      </li>
-      <li><b>Eximius Tech Innovations Pvt. Ltd. – Cyber Security Intern (Jun 2024 – Jul 2024)</b>
-        <ul>
-          <li>Handled phishing reports from employees with manual analysis.</li>
-          <li>Worked on CrowdStrike EDR tickets.</li>
-          <li>Performed vulnerability assessment & network scanning.</li>
-        </ul>
-      </li>
-    </ul>
+    <h2>Professional Experience</h2>
+
+    <section class="role">
+      <h3>SOC Analyst Training Program — SIEM XPERT</h3>
+      <div class="date">April 2026 – September 2026</div>
+      <ul>
+        <li>
+          Completed hands-on training in SOC alert monitoring and triage
+          using Splunk Enterprise and Microsoft Sentinel in a simulated
+          SIEM environment.
+        </li>
+        <li>
+          Practiced classifying true positives, false positives, and
+          benign activity during alert investigation.
+        </li>
+        <li>
+          Worked on log analysis, event correlation, and incident
+          documentation following standard SOC escalation procedures.
+        </li>
+        <li>
+          Earned the Certified SOC Expert credential upon successful
+          course completion.
+        </li>
+      </ul>
+    </section>
+
+    <section class="role">
+      <h3>Cloud Infrastructure &amp; Security Intern — Celebal Technologies</h3>
+      <div class="date">June 2025 – August 2025 | Jaipur</div>
+      <ul>
+        <li>
+          Worked with Microsoft Sentinel for centralized log ingestion,
+          alerting, and security event correlation across cloud workloads.
+        </li>
+        <li>
+          Worked with Microsoft Defender for Office 365, Multi-Factor
+          Authentication (MFA), and Conditional Access policies.
+        </li>
+        <li>
+          Gained practical exposure to Microsoft Entra ID and Microsoft 365
+          security administration, configuration, and troubleshooting.
+        </li>
+      </ul>
+    </section>
+
+    <section class="role">
+      <h3>Cyber Security Intern — Eximius Tech Innovations Pvt. Ltd.</h3>
+      <div class="date">June 2024 – July 2024</div>
+      <ul>
+        <li>
+          Analyzed reported phishing emails and investigated CrowdStrike
+          EDR alerts and tickets to identify indicators of compromise.
+        </li>
+        <li>
+          Performed vulnerability assessments and network scanning to
+          identify security gaps and support remediation recommendations.
+        </li>
+      </ul>
+    </section>
 
     <h2>Technical Skills</h2>
-    <ul>
-      <li>Cyber Security Fundamentals</li>
-      <li>Azure & Cloud Security</li>
-      <li>Networking</li>
-      <li>Linux Fundamentals & Scripting</li>
-      <li>SOC (L1)</li>
+    <ul class="skills">
+      <li>SOC Monitoring &amp; Alert Triage</li>
+      <li>SIEM</li>
+      <li>Splunk Enterprise</li>
+      <li>Microsoft Sentinel</li>
       <li>CrowdStrike EDR</li>
+      <li>Phishing Analysis</li>
+      <li>Incident Documentation</li>
+      <li>Azure Security</li>
+      <li>Microsoft Entra ID</li>
+      <li>Microsoft Defender for Office 365</li>
+      <li>MFA &amp; Conditional Access</li>
+      <li>Vulnerability Assessment</li>
+      <li>Nmap</li>
+      <li>Wireshark</li>
+      <li>Networking</li>
+      <li>Linux</li>
+      <li>Windows Server</li>
+      <li>Python</li>
+      <li>PyYAML</li>
+      <li>MongoDB</li>
+      <li>Kubernetes Security</li>
     </ul>
+
+    <h2>Projects</h2>
+
+    <section class="role">
+      <h3>KubeGuard — Kubernetes Security Assessment Tool</h3>
+      <div class="date">Personal Project | 2026</div>
+      <ul>
+        <li>
+          Built a Kubernetes manifest scanner using Python and PyYAML
+          to assess configurations against CIS Kubernetes Benchmark,
+          NSA, and CISA hardening guidelines.
+        </li>
+        <li>
+          Implemented checks for privileged containers, host namespace
+          sharing, root escalation, and missing resource limits.
+        </li>
+        <li>
+          Integrated MongoDB for scan history and PDF vulnerability
+          assessment reports.
+        </li>
+      </ul>
+    </section>
 
     <h2>Education</h2>
     <ul>
-      <li><b>B.Tech – Computer Science Engineering (Cyber Security)</b><br>
-      Sobhasaria Group of Institutions, Sikar (BTU) | 2023 – 2027 | CGPA: 7.980</li>
-      <li><b>Higher Secondary (12th, PCM)</b><br>
-      Gyandev Public School, Sikar (RBSE) | 2023 | 85.20%</li>
+      <li>
+        <strong>B.Tech — Computer Science Engineering (Cyber Security)</strong><br />
+        Sobhasaria Group of Institutions, Sikar (BTU)<br />
+        <span class="date">2023 – 2027 | CGPA: 8.17 / 10.0</span>
+      </li>
+      <li>
+        <strong>Higher Secondary — Class XII (PCM)</strong><br />
+        Gyandev Public School, Sikar (RBSE)<br />
+        <span class="date">2023 | Percentage: 85.20%</span>
+      </li>
     </ul>
 
     <h2>Certifications</h2>
     <ul>
+      <li>
+        Certified SOC Expert — SIEM XPERT
+        <span class="date">(September 2026)</span>
+        <br />
+        <span class="date">Certificate No.: SOCAPR26031</span>
+      </li>
       <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+      <li>Google Cybersecurity Professional Certificate</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <ul>
+      <li>English</li>
+      <li>Hindi</li>
     </ul>
 
     <h2>Contact</h2>
-    <p>
-      📞 Phone: +91 7877688211<br>
-      📧 Email: <a href="mailto:pgujarsec@gmail.com">pgujarsec@gmail.com</a><br>
-      🔗 LinkedIn: <a href="https://www.linkedin.com/in/pgurjarsec" target="_blank">linkedin.com/in/pgurjarsec</a><br>
-      🖥️ GitHub: <a href="https://github.com/pradeepgurjar" target="_blank">github.com/pradeepgurjar</a>
-    </p>
+    <div class="contact">
+      <p>
+        Phone:
+        <a href="tel:+917877688211">+91 7877688211</a>
+      </p>
+      <p>
+        Email:
+        <a href="mailto:pgurjarsec@gmail.com">pgurjarsec@gmail.com</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/pgurjarsec"
+           target="_blank" rel="noopener noreferrer">
+          linkedin.com/in/pgurjarsec
+        </a>
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/pgurjarsec"
+           target="_blank" rel="noopener noreferrer">
+          github.com/pgurjarsec
+        </a>
+      </p>
+      <p>
+        Portfolio:
+        <a href="https://pradeepgurjar.tech">
+          pradeepgurjar.tech
+        </a>
+      </p>
+    </div>
   </main>
+
+  <footer>
+    <p>&copy; 2026 Pradeep Gurjar | Cyber Security Portfolio</p>
+  </footer>
 </body>
 </html>
